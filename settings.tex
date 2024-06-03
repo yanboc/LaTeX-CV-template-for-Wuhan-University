@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{xltxtra}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\urlstyle{tt}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{relsize}
+\usepackage{xspace}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{fontspec}
+\usepackage{fancybox}
+\usepackage{float}
+
+% 一些小设置，参考自https://github.com/LeyuDame/BNUCV/tree/main
+% 取消中文字符与数字之间的间隔
+\CJKsetecglue{}
+\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}	% 这是个更好看的C++写法，你直接写C++的话，+号会很大，可以使用\Cpp来代替
+\setlength{\parindent}{0pt}							% 取消全局段落缩进
+\pagenumbering{gobble}								% 取消页码显示
+%\setlist{noitemsep}									% 禁用列表中项目之间的额外垂直间距，但保留列表周围的间距
+%\setlist{nosep}										% 禁用列表中项目之间的额外垂直间距及列表周围的间距
+\setlist[itemize]{topsep=0em, leftmargin=*}		% 增加了itemize顶部间距
+\setlist[enumerate]{topsep=0em, leftmargin=*}	% 增加了enumerate顶部间距
+
+\titleformat{\section}					    % 将原标题前面的数字取消了
+  {\LARGE\bfseries\raggedright} 		      % 字体改为LARGE，bold，左对齐
+  {}{0em}                      			  % 可用于添加全局标题前缀
+  {}                           			  % 可用于添加代码
+  [{\color{WHU_Blue}\titlerule}]            % 标题下方加一条线
+\titlespacing*{\section}{0cm}{*1.2}{*1.2}	% 标题左边留白，上方1.2倍，下方1.2倍
+
+\titleformat{\subsection}				    % 将原二级标题前面的数字取消了
+  {\large\bfseries\raggedright} 		      % 字体改为large，bold，左对齐
+  {}{0em}                      			  % 可用于添加全局二级标题前缀
+  {}                           			  % 可用于添加代码
+  []
+\titlespacing*{\subsection}{0cm}{*1.2}{*1.2}% 二级标题左边留白，上方1.2倍，下方1.2倍
+% 页面大小与页边距，按需求调整
+\usepackage[
+	a4paper,
+	left=1.2cm,
+	right=1.2cm,
+	top=1.5cm,
+	bottom=1cm,
+	nohead
+]{geometry}
+% 这里把表格的行间距调成1.2倍了
+\renewcommand{\arraystretch}{1.2}
+% 这里把正文的行间距调成1.2倍了
+\linespread{1.2}
+% 中文字符间距
+\renewcommand{\CJKglue}{\hskip 0.05em}
+
+% 自定义宋体（狮尾四季春），详见readme
+% 英文字体
+\setmainfont[
+    Path=fonts/,
+    Extension=.ttf,
+    BoldFont=* Bold,
+]{SweiSpring}
+% 中文字体
+\setCJKmainfont[
+    Path=fonts/,
+    Extension=.ttf,
+    BoldFont=* Bold,
+]{SweiSpring}
+
+% 自定义主题色
+% 武大蓝（来自官方配色方案，参考https://www.whu.edu.cn/xxgk/wdbs.htm）
+\definecolor{WHU_Blue}{RGB}{0, 37, 84}
+
